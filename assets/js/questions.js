@@ -15,5 +15,9 @@ const questions = [
         question: "4: How can you add a comment in JavaScript?",
         answers: ["<!--Like this!-->","~Like this!~","'Like this!'","//Like this!"],
         correct: "d"
+    },{
+        question: "5: What IS JavaScript?",
+        answers: ["A lovely flavor of coffee","A scripting language for complex features","A Star Wars character's screenplay","A painting program"],
+        correct: "A scripting language for complex features"
     }
 ]
