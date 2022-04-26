@@ -8,16 +8,33 @@
 </head>
 
 <body>
-    
-    <div id="timer">Time Left: 30</div>
 
-    <h1 id="questions"></h1>
+    <header>
+        <h1 class="timer">Time Left: <span id="timer"></span></h1>
+    </header>
 
-    <div id="answers"></div>
+    <div id="startContainer"class=show>
+        <div class="withinStart">
+            <h2>Basic Coding Quiz</h2>
+            <p>Answer as many questions as you can before the time runs out! For every answer you get wrong the time will be reduced.</p>
+            <button class="button" id="startBtn">Begin the Quiz!</button>
+        </div>
+    </div>
 
-    <button id="startBtn">Start Quiz</button>
+    <div id="questionContainer"class="hide">
+        <div class="questions">
+            <div id="question"></div>
+            <div id="answerBtns" class="button-grid"></div>
+        </div>
+    </div>
 
-<script src="assets/js/questions.js"></script>
+    <div class="hide" id="correct">
+        <h2>Correct!</h2>
+    </div>
+    <div class="hide" id="wrong">
+        <h2>!!--WRONG ANSWER--!!</h2>
+    </div>
+
 <script src="assets/js/script.js"></script>
 
 </body>

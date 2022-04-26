@@ -3,7 +3,7 @@ var timeLeft = 30;
 var startQuiz = document.querySelector("#startBtn");
 var questions = document.querySelector("#questions");
 var answers = document.querySelector("#answers");
-var score = 0;
+var qIndex = 0;
 var stopQuiz;
 
 questions.textContent = "Basic Coding Quiz"
