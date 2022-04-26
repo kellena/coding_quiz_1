@@ -1,13 +1,57 @@
-var timer = document.querySelector("#timer");
-var timeLeft = 30;
-var startQuiz = document.querySelector("#startBtn");
-var questions = document.querySelector("#questions");
-var answers = document.querySelector("#answers");
-var qIndex = 0;
-var stopQuiz;
+var startButtonEl = document.querySelector("#startBtn");
+var playAgainEl = document.querySelector("#again");
+var clearScoresEl = document.querySelector("#clearScores")
 
-questions.textContent = "Basic Coding Quiz"
-answers.textContent = "Click the start button to begin the quiz!"
+var startContainerEl = document.getElementById("startContainer");
+var questionContainerEl = document.getElementById("questionContainer");
+var questionsEl = document.getElementsByClassName("questions")
+var questionEl = document.getElementById("question")
+var answerbuttonsEl = document.getElementById("answerBtns")
+var theEndContainerEl = document.getElementById("theEndContainer");
+
+var theScorePageEl = document.getElementById("theScorePage")
+var scoreEl = document.getElementById("score");
+var formInitialsEl = document.getElementById("initialsForm");
+var scoreContainerEl = document.getElementById("scoreContainer")
+var viewScoreEl = document.getElementById("viewScores")
+var highScoreListEl = document.getElementById("highScoreList")
+
+var correctEl = document.getElementById("correct")
+var wrongEl = document.getElementById("wrong")
+var timerEl = document.querySelector("#timer");
+
+var score = 0;
+var timeleft;
+var gameover
+    timerEl.innerText = 0;
+
+var HighScores = [];
+var questionArray
+var questionIndex = 0
+
+var questions = [
+    {
+        question: "1: How do you connect JavaScript files in HTML?",
+        answers: ["<javascript>","<script>","<jungle>","<pantera>"],
+        correct: "<script>"
+    },{
+        question: "2: How do you write 'Heya Stevie!' in an alert box?",
+        answers: ["msgbox('Hello World')","msg('Heya Stevie!')","alert('Heya Stevie!')","heya('Stevie!')"],
+        correct: "alert('Heya Stevie!')"
+    },{
+        question: "3: How do you call myFunction?",
+        answers: ["myFunction();","call myFunction();","call my call function();","callMeByYourName();"],
+        correct: "myFunction();"
+    },{
+        question: "4: How can you add a comment in JavaScript?",
+        answers: ["<!--Like this!-->","~Like this!~","'Like this!'","//Like this!"],
+        correct: "d"
+    },{
+        question: "5: What IS JavaScript?",
+        answers: ["A lovely flavor of coffee","A scripting language for complex features","A Star Wars character's screenplay","A painting program"],
+        correct: "A scripting language for complex features"
+    }
+]
 
 startQuiz.addEventListener("click", function(){
     timerOn();
