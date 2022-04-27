@@ -25,7 +25,7 @@ var timeleft;
 var gameover
     timerEl.innerText = 0;
 
-var HighScores = [];
+var highScores = [];
 var questionArray
 var questionIndex = 0
 
@@ -53,24 +53,26 @@ var questions = [
     }
 ]
 
-startQuiz.addEventListener("click", function(){
-    timerOn();
-    displayQuiz();
-    startQuiz.setAttribute("style", "display: none")
-});
+var showStartPage = function () {
+    theScorePageEl.classList.add("hide")
+    theScorePageEl.classList.remove("show")
+    startContainerEl.classList.remove("hide")
+    startContainerEl.classList.add("show")
+  scoreEl.removeChild(scoreEl.lastChild)
+  
+  location.reload();
 
-function timerOn() {
-    stopQuiz = setInterval(function(){
-        timeLeft--;
-        timer.textContent = "Time: " + timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(stopQuiz);
-            questions.textContent = "High Scores:";
-            answers.innerHTML = localStorage.getItem("userInit") + " --- " + localStorage.getItem("userScore");    
-        }
-    }, 1000);
-}
+  questionIndex = 0
+  gameover = ""
+  timerEl.textContent = 0 
+  score = 0
 
-function displayQuiz() {
-    var 
+  if (correctEl.className = "show") {
+      correctEl.classList.remove("show");
+      correctEl.classList.add("hide")
+  }
+  if (wrongEl.className = "show") {
+      wrongEl.classList.remove("show");
+      wrongEl.classList.add("hide");
+  }
 }
