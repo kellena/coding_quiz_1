@@ -131,3 +131,20 @@ var displayQuestion = function(index) {
     }
 };
 
+var isCorrect = function() {
+    if (correct.className = "hide") {
+        correct.classList.remove("hide")
+        correct.classList.add("score")
+        wrong.classList.remove("score")
+        wrong.classList.add("hide")
+    }
+};  
+  
+  var isWrong = function() {
+    if (wrong.className = "hide") {
+        wrong.classList.remove("hide")
+        wrong.classList.add("score")
+        correct.classList.remove("score")
+        correct.classList.add("hide")
+    }
+};
