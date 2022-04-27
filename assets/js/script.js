@@ -140,7 +140,7 @@ var isCorrect = function() {
     }
 };  
   
-  var isWrong = function() {
+var isWrong = function() {
     if (wrong.className = "hide") {
         wrong.classList.remove("hide")
         wrong.classList.add("score")
