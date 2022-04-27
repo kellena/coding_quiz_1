@@ -118,3 +118,16 @@ var resetAnswers = function() {
       answerBtns.removeChild(answerBtns.firstChild)
     };
 };
+
+var displayQuestion = function(index) {
+    question.innerText = index.q
+    for (var i = 0; i < index.choices.length; i++) {
+        var answerBtn = document.createElement('button')
+        answerBtn.innerText = index.choices[i].choice
+        answerBtn.classList.add('button')
+        answerBtn.classList.add('answerBtn')
+        answerBtn.addEventListener("click", answerCheck)
+        answerBtn.appendChild(answerBtn)
+    }
+};
+
