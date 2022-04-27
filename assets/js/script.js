@@ -76,3 +76,23 @@ var showStartPage = function () {
       wrongEl.classList.add("hide");
   }
 }
+
+var setTime = function () {
+    timeleft = 40;
+  
+    var timercheck = setInterval(function() {
+        timerEl.innerText = timeleft;
+        timeleft--
+    
+        if (gameover) {
+            clearInterval(timercheck)
+        }
+    
+        if (timeleft < 0) {
+            showScore()
+            timerEl.innerText = 0
+            clearInterval(timercheck)
+        }
+    
+        }, 1000)
+  }
