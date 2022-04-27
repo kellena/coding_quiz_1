@@ -1,29 +1,28 @@
-var startButtonEl = document.querySelector("#startBtn");
-var playAgainEl = document.querySelector("#again");
-var clearScoresEl = document.querySelector("#clearScores")
+var startButton = document.querySelector("#startBtn");
+var playAgain = document.querySelector("#again");
+var clearScores = document.querySelector("#clearScores")
 
-var startContainerEl = document.getElementById("startContainer");
-var questionContainerEl = document.getElementById("questionContainer");
-var questionsEl = document.getElementsByClassName("questions")
-var questionEl = document.getElementById("question")
-var answerbuttonsEl = document.getElementById("answerBtns")
-var theEndContainerEl = document.getElementById("theEndContainer");
+var startContainer = document.getElementById("startContainer");
+var questionContainer = document.getElementById("questionContainer");
+var questions = document.getElementsByClassName("questions")
+var question = document.getElementById("question")
+var answerbuttons = document.getElementById("answerBtns")
+var endContainer = document.getElementById("endContainer");
 
-var theScorePageEl = document.getElementById("theScorePage")
-var scoreEl = document.getElementById("score");
-var formInitialsEl = document.getElementById("initialsForm");
-var scoreContainerEl = document.getElementById("scoreContainer")
-var viewScoreEl = document.getElementById("viewScores")
-var highScoreListEl = document.getElementById("highScoreList")
+var scorePage = document.getElementById("theScorePage")
+var score = document.getElementById("score");
+var formInitials = document.getElementById("initialsForm");
+var scoreContainer = document.getElementById("scoreContainer")
+var viewScore = document.getElementById("viewScores")
+var highScoreList = document.getElementById("highScoreList")
 
-var correctEl = document.getElementById("correct")
-var wrongEl = document.getElementById("wrong")
-var timerEl = document.querySelector("#timer");
+var correct = document.getElementById("correct")
+var wrong = document.getElementById("wrong")
+var timer = document.querySelector("#timer");
 
 var score = 0;
-var timeleft;
-var gameover
-    timerEl.innerText = 0;
+var timeLeft;
+var gameOver;
 
 var highScores = [];
 var questionArray
@@ -54,45 +53,58 @@ var questions = [
 ]
 
 var showStartPage = function () {
-    theScorePageEl.classList.add("hide")
-    theScorePageEl.classList.remove("show")
-    startContainerEl.classList.remove("hide")
-    startContainerEl.classList.add("show")
-  scoreEl.removeChild(scoreEl.lastChild)
+    theScorePage.classList.add("hide")
+    theScorePage.classList.remove("show")
+    startContainer.classList.remove("hide")
+    startContainer.classList.add("show")
+  score.removeChild(score.lastChild)
   
   location.reload();
 
   questionIndex = 0
-  gameover = ""
-  timerEl.textContent = 0 
+  gameOver = ""
+  timer.textContent = 0 
   score = 0
 
-  if (correctEl.className = "show") {
-      correctEl.classList.remove("show");
-      correctEl.classList.add("hide")
+  if (correct.className = "show") {
+      correct.classList.remove("show");
+      correct.classList.add("hide")
   }
-  if (wrongEl.className = "show") {
-      wrongEl.classList.remove("show");
-      wrongEl.classList.add("hide");
+  if (wrong.className = "show") {
+      wrong.classList.remove("show");
+      wrong.classList.add("hide");
   }
 }
 
 var setTime = function () {
-    timeleft = 40;
+    timeLeft = 30;
   
-    var timercheck = setInterval(function() {
-        timerEl.innerText = timeleft;
-        timeleft--
+    var timerCheck = setInterval(function() {
+        timer.innerText = timeLeft;
+        timeLeft--
     
         if (gameover) {
-            clearInterval(timercheck)
+            clearInterval(timerCheck)
         }
     
-        if (timeleft < 0) {
+        if (timeLeft < 0) {
             showScore()
-            timerEl.innerText = 0
-            clearInterval(timercheck)
+            timer.innerText = 0
+            clearInterval(timerCheck)
         }
     
         }, 1000)
-  }
+}
+
+var startGame = function() {
+  
+    startContainer.classList.add('hide');
+    startContainer.classList.remove('show');
+    questionContainer.classList.remove('hide');
+    questionContainer.classList.add('show');
+    
+    questionArray = questions.sort(() => Math.random())
+    // set 
+};
+  
+
