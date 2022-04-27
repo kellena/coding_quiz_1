@@ -6,7 +6,7 @@ var startContainer = document.getElementById("startContainer");
 var questionContainer = document.getElementById("questionContainer");
 var questions = document.getElementsByClassName("questions")
 var question = document.getElementById("question")
-var answerbuttons = document.getElementById("answerBtns")
+var answerBtns = document.getElementById("answerBtns")
 var endContainer = document.getElementById("endContainer");
 
 var scorePage = document.getElementById("theScorePage")
@@ -94,7 +94,12 @@ var setTime = function () {
         }
     
         }, 1000)
-}
+};
+
+var setQuestion = function() {
+    resetAnswers();
+    displayQuestion(questions[questionIndex]);
+};
 
 var startGame = function() {
   
@@ -104,7 +109,12 @@ var startGame = function() {
     questionContainer.classList.add('show');
     
     questionArray = questions.sort(() => Math.random())
-    // set 
+    setTime()
+    setQuestion()
 };
   
-
+var resetAnswers = function() {
+    while (answerBtns.firstChild) {
+      answerBtns.removeChild(answerBtns.firstChild)
+    };
+};
