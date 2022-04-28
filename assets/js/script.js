@@ -189,3 +189,22 @@ var createHighScore = function(event) {
 }
   
 formInitials.reset();
+
+var highScore = {
+    initials: initials,
+    score: score
+} 
+    
+highScores.push(highScore);
+highScores.sort((a, b) => {return b.score-a.score});
+    
+while (highScoreList.firstChild) {
+    highScoreList.removeChild(highScoreList.firstChild)
+}
+
+for (var i = 0; i < highScores.length; i++) {
+    var highscore = document.createElement("li");
+    highscore.ClassName = "high-score";
+    highscore.innerHTML = highScores[i].initials + " --- " + highScores[i].score;
+    highScoreList.appendChild(highScore);
+}
