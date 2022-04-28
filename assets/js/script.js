@@ -208,3 +208,27 @@ for (var i = 0; i < highScores.length; i++) {
     highscore.innerHTML = highScores[i].initials + " --- " + highScores[i].score;
     highScoreList.appendChild(highScore);
 }
+
+var saveScores = function () {
+    localStorage.setItem("highScores", JSON.stringify(highScores))
+}
+  
+var loadScores = function () {
+    var loadedScores = localStorage.getItem("highScores")
+        if (!loadedScores) {
+        return false;
+    }
+    loadedScores = JSON.parse(loadedScores);
+    loadedScores.sort((a, b) => {return b.score-a.score})
+  
+    for (var i = 0; i < loadedScores.length; i++) {
+        var highScore = document.createElement("li");
+        highScore.ClassName = "high-score";
+        highScore.innerText = loadedScores[i].initials + " - " + loadedScores[i].score;
+        highScoreList.appendChild(highScore);
+  
+        highScores.push(loadedScores[i]);
+    }
+}
+
+saveScores();
