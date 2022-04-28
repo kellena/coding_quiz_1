@@ -1,4 +1,4 @@
-var startButton = document.querySelector("#startBtn");
+var startBtn = document.querySelector("#startBtn");
 var playAgain = document.querySelector("#again");
 var clearScores = document.querySelector("#clearScores")
 
@@ -257,20 +257,13 @@ var displayScores = function() {
         wrong.classList.remove("show");
         wrong.classList.add("hide");
     }
-
 }
+
+startButton.addEventListener("click", startGame)
+formInitials.addEventListener("submit", createHighScore)
+viewScore.addEventListener("click", displayScores)
+playAgain.addEventListener("click", showStartPage)
 
 saveScores();
 loadScores();
 displayScores();
-
-var clearScores = function () {
-    highScores = [];
-  
-    while (highScoreList.firstChild) {
-        highScoreList.removeChild(highScoreList.firstChild);
-    }
-  
-    localStorage.clear(highScores);
-  
-} 
