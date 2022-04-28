@@ -9,7 +9,7 @@ var question = document.getElementById("question")
 var answerBtns = document.getElementById("answerBtns")
 var endContainer = document.getElementById("endContainer");
 
-var scorePage = document.getElementById("theScorePage")
+var scorePage = document.getElementById("scorePage")
 var score = document.getElementById("score");
 var formInitials = document.getElementById("initialsForm");
 var scoreContainer = document.getElementById("scoreContainer")
@@ -53,8 +53,8 @@ var questions = [
 ]
 
 var showStartPage = function () {
-    theScorePage.classList.add("hide")
-    theScorePage.classList.remove("show")
+    scorePage.classList.add("hide")
+    scorePage.classList.remove("show")
     startContainer.classList.remove("hide")
     startContainer.classList.add("show")
   score.removeChild(score.lastChild)
@@ -231,4 +231,46 @@ var loadScores = function () {
     }
 }
 
+var displayScores = function() {
+
+    scorePage.classList.remove("hide");
+    scorePage.classList.add("show");
+    gameOver = "true"
+  
+    if (endContainer.className = "show") {
+      endContainer.classList.remove("show");
+      endContainer.classList.add("hide");
+    }
+    if (startContainer.className = "show") {
+      startContainer.classList.remove("show");
+      startContainer.classList.add("hide");
+    }
+    if (questionContainer.className = "show") {
+      questionContainer.classList.remove("show");
+      questionContainer.classList.add("hide");
+    }
+    if (correct.className = "show") {
+        correct.classList.remove("show");
+        correct.classList.add("hide");
+    }
+    if (wrong.className = "show") {
+        wrong.classList.remove("show");
+        wrong.classList.add("hide");
+    }
+
+}
+
 saveScores();
+loadScores();
+displayScores();
+
+var clearScores = function () {
+    highScores = [];
+  
+    while (highScoreList.firstChild) {
+        highScoreList.removeChild(highScoreList.firstChild);
+    }
+  
+    localStorage.clear(highScores);
+  
+} 
