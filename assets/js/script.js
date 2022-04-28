@@ -4,14 +4,14 @@ var startContainer = document.getElementById("startContainer");
 var questionContainer = document.getElementById("questionContainer");
 var questions = document.getElementsByClassName("questions")
 var question = document.getElementById("question")
-var answerBtns = document.getElementById("answerBtns")
+var answerBtn = document.getElementById("answerBtn")
 var endContainer = document.getElementById("endContainer");
 
 var scorePage = document.getElementById("scorePage")
 var score = document.getElementById("score");
 var formInitials = document.getElementById("initialsForm");
 var scoreContainer = document.getElementById("scoreContainer")
-var viewScore = document.getElementById("viewScores")
+var viewScore = document.getElementById("viewScore")
 var highScoreList = document.getElementById("highScoreList")
 
 var correct = document.getElementById("correct")
@@ -57,23 +57,23 @@ var showStartPage = function () {
     scorePage.classList.remove("show")
     startContainer.classList.remove("hide")
     startContainer.classList.add("show")
-  score.removeChild(score.lastChild)
+    score.removeChild(score.lastChild)
   
-  location.reload();
+    location.reload();
 
-  questionIndex = 0
-  gameOver = ""
-  timer.textContent = 0 
-  score = 0
+    questionIndex = 0
+    gameOver = ""
+    timer.textContent = 0 
+    score = 0
 
-  if (correct.className = "show") {
-      correct.classList.remove("show");
-      correct.classList.add("hide")
-  }
-  if (wrong.className = "show") {
-      wrong.classList.remove("show");
-      wrong.classList.add("hide");
-  }
+    if (correct.className = "show") {
+        correct.classList.remove("show");
+        correct.classList.add("hide")
+    }
+    if (wrong.className = "show") {
+        wrong.classList.remove("show");
+        wrong.classList.add("hide");
+    }
 }
 
 var setTime = function () {
@@ -259,7 +259,7 @@ var displayScores = function() {
     }
 }
 
-startButton.addEventListener("click", startGame)
+startBtn.addEventListener("click", startGame)
 formInitials.addEventListener("submit", createHighScore)
 viewScore.addEventListener("click", displayScores)
 playAgain.addEventListener("click", showStartPage)
