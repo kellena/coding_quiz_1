@@ -1,6 +1,4 @@
 var startBtn = document.querySelector("#startBtn");
-var playAgain = document.querySelector("#again");
-var clearScores = document.querySelector("#clearScores")
 
 var startContainer = document.getElementById("startContainer");
 var questionContainer = document.getElementById("questionContainer");
@@ -23,6 +21,8 @@ var timer = document.querySelector("#timer");
 var score = 0;
 var timeLeft;
 var gameOver;
+var playAgain = document.querySelector("#again");
+
 
 var highScores = [];
 var questionArray
