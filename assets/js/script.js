@@ -131,6 +131,26 @@ var displayQuestion = function(index) {
     }
 };
 
+var answerCheck = function(event) {
+    var selectedAns = event.target
+        if (questions[questionIndex].a === selectedAns.innerText){
+            isCorrect()
+            score = score + 5
+        } else {
+          isWrong()
+          score = score - 1;
+          timeLeft = timeLeft - 5;
+      };
+    
+    questionIndex++
+        if  (questionArray.length > questionIndex + 1) {
+            setQuestion()
+        } else {
+           gameOver = "true";
+           showScore();
+        }
+};
+
 var isCorrect = function() {
     if (correct.className = "hide") {
         correct.classList.remove("hide")
