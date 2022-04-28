@@ -168,3 +168,24 @@ var isWrong = function() {
         correct.classList.add("hide")
     }
 };
+
+var showScore = function () {
+    questionContainer.classList.add("hide");
+    endContainer.classList.remove("hide");
+    endContainer.classList.add("show");
+  
+    var scoreDisplay = document.createElement("p");
+    scoreDisplay.innerText = ("Your final score is " + score + "!");
+    score.appendChild(scoreDisplay);
+}       
+  
+var createHighScore = function(event) { 
+    event.preventDefault() 
+    var initials = document.querySelector("#initials").value;
+    if (!initials) {
+      alert("Please enter your intials to track your score.");
+      return;
+    }
+}
+  
+formInitials.reset();
