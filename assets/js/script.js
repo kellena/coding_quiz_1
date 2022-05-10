@@ -13,6 +13,37 @@ var displayScore = document.createElement("h1");
 document.body.appendChild(displayTimer);
 document.body.appendChild(displayScore);
 
+var quiz;
+var questionPool = [
+
+    {
+        question: "Which tag is used to link a CSS file to an html document?",
+        answers: ["<link>", "<style>", "<css>", "<script>"],
+        correct: "<link>",
+    },
+    {
+        question: "Which tag is used to link a JS file to an html document?",
+        answers: ["<script>", "<style>", "<js>", "<java>"],
+        correct: "<script>",
+    },
+    {
+        question: "What is your favorite color?",
+        answers: ["blue", "yellow", "red", "green"],
+        correct: "blue",
+    },
+    {
+        question: "What is your quest?",
+        answers: ["To seek the Holy Grail", "It's a secret", "I dunno", "Deltora"],
+        correct: "because", 
+    },
+    {
+        question: "What is the average velocity of a swallow?",
+        answers: ["African or European?", "85ms", "26mph", "like so fast"],
+        correct: "African or European?",
+    },
+
+];
+
 
 function startQuiz() {
 
