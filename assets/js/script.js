@@ -25,8 +25,8 @@ var playAgain = document.querySelector("#again");
 
 
 var highScores = [];
-var questionArray
-var questionIndex = 0
+var questionArray;
+var questionIndex = 0;
 
 var questions = [
     {
@@ -114,8 +114,8 @@ var startGame = function() {
 };
   
 var resetAnswers = function() {
-    while (answerBtns.firstChild) {
-      answerBtns.removeChild(answerBtns.firstChild)
+    while (answerBtn.firstChild) {
+      answerBtn.removeChild(answerBtn.firstChild)
     };
 };
 
