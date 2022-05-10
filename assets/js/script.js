@@ -34,7 +34,7 @@ var questionPool = [
     {
         question: "What is your quest?",
         answers: ["To seek the Holy Grail", "It's a secret", "I dunno", "Deltora"],
-        correct: "because", 
+        correct: "To seek the Holy Grail", 
     },
     {
         question: "What is the average velocity of a swallow?",
@@ -67,9 +67,9 @@ function startQuiz() {
             document.location.reload();
         }
 
-      }, 1000);
+    }, 1000);
 
-      displayQuiz();
+    displayQuiz();
 
 };
 
@@ -120,7 +120,7 @@ function gameOver() {
     } else {
         startBtn.style.display = "none";
     }
-    removeQuiz(quizDisplay);
+    hideQuiz(quizDisplay);
 
 };
 
