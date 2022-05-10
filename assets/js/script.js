@@ -79,17 +79,20 @@ function displayQuiz() {
     quiz = questionPool[index];
     questionPool.splice(index, 1);
     displayQuestion.textContent = quiz.question;
-    removeQuiz(displayAnswers);
+    hideQuiz(displayAnswers);
     
     for (let i = 0; i < 4; i++) {
+
         quizDisplay.appendChild(displayAnswers);
         var index = Math.floor(Math.random() * quiz.answers.length);
+
         var displayAnswer = document.createElement("button");
         displayAnswer.setAttribute("class", "answers");
         displayAnswers.appendChild(displayAnswer);
         displayAnswer.textContent = quiz.answers[index];
         displayAnswer.setAttribute("id", quiz.answers[index]);
         quiz.answers.splice(index, 1);
+        
     }
 
 };
