@@ -73,7 +73,6 @@ function startQuiz() {
 
 };
 
-
 function displayQuiz() {
 
     var index = Math.floor(Math.random() * questionPool.length);
@@ -95,7 +94,7 @@ function displayQuiz() {
 
 };
 
-function checkAnswer() {
+function checkAnswer(e) {
 
     if (e.path[0].id === quiz.correct) {
         score++;
@@ -106,7 +105,11 @@ function checkAnswer() {
 
 };
 
-function hideQuiz() {};
+function hideQuiz(p) {
+    while (p.firstChild) {
+        p.removeChild(p.firstChild);
+    }
+};
 
 function gameOver() {};
 
