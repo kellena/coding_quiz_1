@@ -106,10 +106,23 @@ function checkAnswer(e) {
 };
 
 function hideQuiz(p) {
+
     while (p.firstChild) {
         p.removeChild(p.firstChild);
     }
+
 };
 
-function gameOver() {};
+function gameOver() {
 
+    if (startBtn.style.display === "none") {
+        startBtn.style.display = "block";
+    } else {
+        startBtn.style.display = "none";
+    }
+    removeQuiz(quizDisplay);
+
+};
+
+startBtn.addEventListener("click", startQuiz);
+displayAnswers.addEventListener("click", checkAnswer);
